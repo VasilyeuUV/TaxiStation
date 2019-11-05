@@ -1,10 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Interface Name="TaxiStation.Interfaces.IVelocity">
+  <Interface Name="TaxiStation.Interfaces.IMoveable">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
-      <FileName>Interfaces\IVelocity.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IMoveable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiStation.Interfaces.ISelfPropelled">
+    <Position X="0.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAACAAAAIAAAAIAAAAA=</HashCode>
+      <FileName>Interfaces\ISelfPropelled.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
