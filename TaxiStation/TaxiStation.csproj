@@ -46,6 +46,8 @@
     <Compile Include="Interfaces\IMoveable.cs" />
     <Compile Include="Interfaces\IMover.cs" />
     <Compile Include="Interfaces\ISelfPropelled.cs" />
+    <Compile Include="Models\AutoParkModel.cs" />
+    <Compile Include="Models\TaxiStationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -53,8 +55,6 @@
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
