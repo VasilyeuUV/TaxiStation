@@ -1,6 +1,6 @@
 ﻿namespace TaxiStation.Interfaces
 {
-    public interface ISelfPropelled : IMoveable
+    public interface ISelfPropelled : IMoveable, IMover
     {
 
         ///// <summary>
