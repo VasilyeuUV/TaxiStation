@@ -11,9 +11,16 @@
         //int CurrentSpeed { get; }
 
         /// <summary>
-        /// Maximum object speed
+        /// The maximum speed of the object forward (>0)
         /// </summary>
-        int MaxSpeed { get; }
-    
+        int ForwardMaxSpeed { get; }
+
+        ///// <summary>
+        ///// The maximum speed of the object backward (negative meaning)
+        ///// </summary>
+        //int BackwardMaxSpeed { get; }
+
+
+
     }
 }
