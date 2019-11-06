@@ -10,10 +10,5 @@ namespace TaxiStation.Interfaces
         ///// </summary>
         // int FuelConsumptionAverage { get; }
 
-        /// <summary>
-        /// Fuel consumption in the city
-        /// </summary>
-        int FuelConsumptionTown { get; }
-
     }
 }

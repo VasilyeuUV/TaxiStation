@@ -1,25 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="TaxiStation.Models.TaxiStationModel">
-    <Position X="7.75" Y="0.5" Width="1.5" />
+    <Position X="10" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\TaxiStationModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TaxiStation.Models.AutoParkModel">
-    <Position X="7.75" Y="2.25" Width="1.5" />
+    <Position X="10" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Models\AutoParkModel.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TaxiStation.Elements.Engine.ICEEngineBase">
-    <Position X="4.25" Y="5" Width="1.5" />
+    <Position X="3.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Elements\Engine\ICEEngineBase.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="TaxiStation.Elements.FuelSystem.FuelSystemBase">
     <Position X="7.75" Y="5" Width="1.5" />
@@ -28,15 +29,30 @@
       <FileName>Elements\FuelSystem\FuelSystemBase.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TaxiStation.BaseClasses.VehicleBase">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseClasses\VehicleBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TaxiStation.Elements.Engine.DieselEngine" Collapsed="true">
+    <Position X="1.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Elements\Engine\DieselEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="TaxiStation.Interfaces.IMoveable">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMoveable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TaxiStation.Interfaces.ISelfPropelled">
-    <Position X="2.25" Y="2.25" Width="1.5" />
+    <Position X="0.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\ISelfPropelled.cs</FileName>
@@ -45,22 +61,28 @@
   <Interface Name="TaxiStation.Interfaces.IMover">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IMover.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="TaxiStation.Interfaces.IMoveDirection">
-    <Position X="0.5" Y="2.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Interfaces\IMoveDirection.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="TaxiStation.Interfaces.IFuelConsumption">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Interfaces\IFuelConsumption.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="TaxiStation.Interfaces.IFuelConsumptionVehicle">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="TaxiStation.Interfaces.IFuelConsumption" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="1.368" />
+        <Point X="4.75" Y="1.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IFuelConsumptionVehicle.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Enum Name="TaxiStation.Enums.EnumFuelType">
@@ -75,13 +97,6 @@
     <TypeIdentifier>
       <HashCode>BKAACCgQA6AMJAiAAIwAQAIEAAgAACgUgBCAAkkQ4GI=</HashCode>
       <FileName>Enums\EnumCarsBrand.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="TaxiStation.Enums.EnumMoveDirection">
-    <Position X="11.75" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
-      <FileName>Enums\EnumMoveDirection.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />
