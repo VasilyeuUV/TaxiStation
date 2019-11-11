@@ -50,6 +50,7 @@ namespace Shop.Models
 
         public void DisplayCarForSale()
         {
+            Console.Clear();
             Console.WriteLine("АВТОМАГАЗИН");
             for (int i = 0; i < _carForSaleDict.Count; i++)
             {
@@ -60,9 +61,20 @@ namespace Shop.Models
 
         public Car SaleCar(int npp)
         {
-            CarForSaleModel _saledCar = _carForSaleDict[npp];
-            _carForSaleDict.Remove(npp);
+            if (!_carForSaleDict.ContainsKey(npp))
+            {
+                DisplayCarForSale();
+            }
+
+
+            CarForSaleModel _saledCar = _carForSaleDict[npp];            
             _saledCar.Car.CurrentPrice = _saledCar.CurrentPrice;
+
+            _carForSaleDict.Remove(npp);
+            if (_carForSaleDict.Count < 1)
+            {
+                _carForSaleDict = SetVehicleForSaleRND();
+            }
             return _saledCar.Car;
         }
 
