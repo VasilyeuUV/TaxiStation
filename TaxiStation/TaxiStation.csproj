@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IBrand.cs" />
+    <Compile Include="Interfaces\IPriceable.cs" />
     <Compile Include="Interfaces\IVehicleBuilder.cs" />
     <Compile Include="MachinerySystems\Brand\Brand.cs" />
     <Compile Include="Vehicles\Car.cs" />

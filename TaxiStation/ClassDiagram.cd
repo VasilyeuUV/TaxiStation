@@ -15,7 +15,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TaxiStation.MachinerySystems.Engine.ICEEngineBase">
-    <Position X="3.5" Y="4" Width="1.5" />
+    <Position X="7" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MachinerySystems\Engine\ICEEngineBase.cs</FileName>
@@ -23,7 +23,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TaxiStation.MachinerySystems.FuelSystem.FuelSystemBase">
-    <Position X="7.75" Y="5" Width="1.5" />
+    <Position X="5.75" Y="9" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAA=</HashCode>
       <FileName>MachinerySystems\FuelSystem\FuelSystemBase.cs</FileName>
@@ -32,16 +32,37 @@
   <Class Name="TaxiStation.Vehicles.VehicleBase">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAIAAAAAAAAAAAABAAA=</HashCode>
       <FileName>Vehicles\VehicleBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="TaxiStation.MachinerySystems.Engine.DieselEngine" Collapsed="true">
-    <Position X="1.75" Y="6.5" Width="1.5" />
+    <Position X="5.75" Y="8" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MachinerySystems\Engine\DieselEngine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiStation.MachinerySystems.Brand.Brand">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MachinerySystems\Brand\Brand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiStation.Models.AutoShopModel">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AutoShopModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TaxiStation.Vehicles.Car" Collapsed="true">
+    <Position X="6" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Vehicles\Car.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="TaxiStation.Interfaces.IMoveable">
@@ -85,15 +106,22 @@
       <FileName>Interfaces\IFuelConsumptionVehicle.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="TaxiStation.Interfaces.IVehicleBuilder">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IVehicleBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="TaxiStation.Enums.EnumFuelType">
-    <Position X="11.75" Y="0.5" Width="1.5" />
+    <Position X="13.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAAAAAAQAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Enums\EnumFuelType.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="TaxiStation.Enums.EnumCarsBrand" Collapsed="true">
-    <Position X="11.75" Y="2" Width="1.5" />
+    <Position X="13.5" Y="2" Width="1.5" />
     <TypeIdentifier>
       <HashCode>BKAACCgQA6AMJAiAAIwAQAIEAAgAACgUgBCAAkkQ4GI=</HashCode>
       <FileName>Enums\EnumCarsBrand.cs</FileName>

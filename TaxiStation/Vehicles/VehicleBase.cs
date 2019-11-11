@@ -9,7 +9,7 @@ using TaxiStation.MachinerySystems.Brand;
 
 namespace TaxiStation.Vehicles
 {
-    public abstract class VehicleBase : ISelfPropelled
+    public abstract class VehicleBase : ISelfPropelled, IPriceable
     {
 
         #region FIELDS
@@ -29,6 +29,11 @@ namespace TaxiStation.Vehicles
         /// Vehicle brand
         /// </summary>
         public Brand Brand { get; protected set; }
+
+        /// <summary>
+        /// Vehicle Price
+        /// </summary>
+        public int CurrentPrice { get; set; }
 
 
 

@@ -6,7 +6,7 @@ namespace TaxiStation.MachinerySystems.Brand
     /// <summary>
     /// Machinery Brand
     /// </summary>
-    public class Brand : IBrand
+    public class Brand
     {
 
         #region FIELDS
@@ -22,16 +22,7 @@ namespace TaxiStation.MachinerySystems.Brand
         /// <summary>
         /// Machinery brand Name
         /// </summary>
-        public string Name { get; protected set; }
-
-        /// <summary>
-        /// Machinery model current price
-        /// </summary>
-        public int CurrentPrice { get; protected set; }
-
-
-
-
+        public string Name { get; private set; }
 
 
 
@@ -41,6 +32,10 @@ namespace TaxiStation.MachinerySystems.Brand
         #region CTOR
         //##################################################################################################################
 
+        public Brand(string name)
+        {
+            this.Name = name;
+        }
 
         #endregion // CTOR
 
