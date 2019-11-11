@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TaxiStation.Enums;
+using TaxiStation.Interfaces;
+using TaxiStation.MachinerySystems.Brand;
 
-namespace TaxiStation.Elements.Engine
+namespace TaxiStation.Vehicles
 {
-    internal class DieselEngine : ICEEngineBase
+    public abstract class VehicleBase : ISelfPropelled
     {
-
 
         #region FIELDS
         //##################################################################################################################
@@ -24,9 +26,10 @@ namespace TaxiStation.Elements.Engine
         //##################################################################################################################
 
         /// <summary>
-        /// Fuel consumption in the city
+        /// Vehicle brand
         /// </summary>
-        public override int FuelConsumptionTown { get; protected set; }
+        public Brand Brand { get; protected set; }
+
 
 
 
@@ -36,12 +39,16 @@ namespace TaxiStation.Elements.Engine
         #region CTOR
         //##################################################################################################################
 
-
-        public DieselEngine()
+        public VehicleBase()
         {
-            this.Name = "Disel Engine";
-            this.FuelConsumptionTown = SetFuelConsumtionRND();
+
         }
+
+
+
+
+
+
 
         #endregion // CTOR
 
@@ -51,6 +58,11 @@ namespace TaxiStation.Elements.Engine
         //##################################################################################################################
 
 
+        private int SetFuelConsumtionRND()
+        {
+            Random rnd = new Random();
+            return rnd.Next(3, 15);     //Получить случайное число (в диапазоне от 3 до 15)
+        }
 
 
 

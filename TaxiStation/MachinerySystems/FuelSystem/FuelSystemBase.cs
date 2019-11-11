@@ -1,13 +1,8 @@
-﻿using System;
-using TaxiStation.Enums;
-using TaxiStation.Interfaces;
+﻿using TaxiStation.Enums;
 
-namespace TaxiStation.Elements.Engine
+namespace TaxiStation.MachinerySystems.FuelSystem
 {
-    /// <summary>
-    /// Internal combustion engine abstract class
-    /// </summary>
-    public abstract class ICEEngineBase : IFuelConsumptionVehicle
+    public abstract class FuelSystemBase
     {
 
         #region Fields
@@ -21,20 +16,14 @@ namespace TaxiStation.Elements.Engine
         //##################################################################################################################
 
         /// <summary>
-        /// engine type
+        /// Engine fuel type
         /// </summary>
-        public string Name { get; protected set; }
-
+        public EnumFuelType FuelType { get; protected set; }
 
         /// <summary>
-        /// Fuel consumption in the city
+        /// Fuel tank or battery capacity
         /// </summary>
-        public abstract int FuelConsumptionTown { get; protected set; }
-
-
-
-
-
+        public int FuelCapacity { get; protected set; }
 
 
         #endregion // PROPERTIES
@@ -51,16 +40,8 @@ namespace TaxiStation.Elements.Engine
         #region METHODS
         //##################################################################################################################
 
-        protected int SetFuelConsumtionRND()
-        {
-            Random rnd = new Random();
-            return rnd.Next(3, 15);     //Получить случайное число (в диапазоне от 3 до 15)
-        }
-
-
-
-
         #endregion // METHODS
 
     }
 }
+

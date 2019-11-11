@@ -43,10 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseClasses\VehicleBase.cs" />
-    <Compile Include="Elements\Engine\DieselEngine.cs" />
-    <Compile Include="Elements\Engine\ICEEngineBase.cs" />
-    <Compile Include="Elements\FuelSystem\FuelSystemBase.cs" />
+    <Compile Include="Interfaces\IBrand.cs" />
+    <Compile Include="Interfaces\IVehicleBuilder.cs" />
+    <Compile Include="MachinerySystems\Brand\Brand.cs" />
+    <Compile Include="Vehicles\Car.cs" />
+    <Compile Include="Vehicles\VehicleBase.cs" />
+    <Compile Include="MachinerySystems\Engine\DieselEngine.cs" />
+    <Compile Include="MachinerySystems\Engine\ICEEngineBase.cs" />
+    <Compile Include="MachinerySystems\FuelSystem\FuelSystemBase.cs" />
     <Compile Include="Enums\EnumCarsBrand.cs" />
     <Compile Include="Enums\EnumFuelType.cs" />
     <Compile Include="Interfaces\IFuelConsumption.cs" />
@@ -55,6 +59,7 @@
     <Compile Include="Interfaces\IMover.cs" />
     <Compile Include="Interfaces\ISelfPropelled.cs" />
     <Compile Include="Models\AutoParkModel.cs" />
+    <Compile Include="Models\AutoShopModel.cs" />
     <Compile Include="Models\TaxiStationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

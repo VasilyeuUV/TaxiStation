@@ -14,34 +14,34 @@
       <FileName>Models\AutoParkModel.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TaxiStation.Elements.Engine.ICEEngineBase">
+  <Class Name="TaxiStation.MachinerySystems.Engine.ICEEngineBase">
     <Position X="3.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAgAAAAAAAAAACAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Elements\Engine\ICEEngineBase.cs</FileName>
+      <FileName>MachinerySystems\Engine\ICEEngineBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="TaxiStation.Elements.FuelSystem.FuelSystemBase">
+  <Class Name="TaxiStation.MachinerySystems.FuelSystem.FuelSystemBase">
     <Position X="7.75" Y="5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAEAAAAAAAAAA=</HashCode>
-      <FileName>Elements\FuelSystem\FuelSystemBase.cs</FileName>
+      <FileName>MachinerySystems\FuelSystem\FuelSystemBase.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TaxiStation.BaseClasses.VehicleBase">
+  <Class Name="TaxiStation.Vehicles.VehicleBase">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>BaseClasses\VehicleBase.cs</FileName>
+      <FileName>Vehicles\VehicleBase.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="TaxiStation.Elements.Engine.DieselEngine" Collapsed="true">
+  <Class Name="TaxiStation.MachinerySystems.Engine.DieselEngine" Collapsed="true">
     <Position X="1.75" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Elements\Engine\DieselEngine.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MachinerySystems\Engine\DieselEngine.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="TaxiStation.Interfaces.IMoveable">
