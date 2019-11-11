@@ -9,7 +9,7 @@ namespace Shop.Models
         #region Fields
         //##################################################################################################################
 
-        private Dictionary<int, CarForSaleModel> _carForSaleDict;
+        private Dictionary<int, CarForSaleModel> _carForSaleDict;       // dictionary Cars for sale
 
 
         #endregion // Fields
@@ -48,6 +48,9 @@ namespace Shop.Models
         #region METHODS
         //##################################################################################################################
 
+        /// <summary>
+        /// Display RND Cars in AutoShop
+        /// </summary>
         public void DisplayCarForSale()
         {
             Console.Clear();
@@ -58,14 +61,17 @@ namespace Shop.Models
             }
         }
 
-
+        /// <summary>
+        /// Сar sale process
+        /// </summary>
+        /// <param name="npp">Car Id in AutoShop</param>
+        /// <returns>Sold Car</returns>
         public Car SaleCar(int npp)
         {
             if (!_carForSaleDict.ContainsKey(npp))
             {
-                DisplayCarForSale();
+                return null;
             }
-
 
             CarForSaleModel _saledCar = _carForSaleDict[npp];            
             _saledCar.Car.CurrentPrice = _saledCar.CurrentPrice;
@@ -75,15 +81,16 @@ namespace Shop.Models
             {
                 _carForSaleDict = SetVehicleForSaleRND();
             }
+            DisplayCarForSale();
             return _saledCar.Car;
         }
 
 
 
         /// <summary>
-        /// Car for sale List
+        /// List of cars for sale and their prices
         /// </summary>
-        /// <returns></returns>
+        /// <returns>New Dictionary Cars for sale</returns>
         private Dictionary<int, CarForSaleModel> SetVehicleForSaleRND()
         {
             Random rnd = new Random();
