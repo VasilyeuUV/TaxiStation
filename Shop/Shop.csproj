@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40C39FD4-FC1E-4451-8DE4-2073882E4F6F}</ProjectGuid>
+    <ProjectGuid>{7FFEC07A-623F-4196-B9F7-91221603EDA9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TaxiStation</RootNamespace>
-    <AssemblyName>TaxiStation</AssemblyName>
+    <RootNamespace>Shop</RootNamespace>
+    <AssemblyName>Shop</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IPriceable.cs" />
-    <Compile Include="Models\AutoParkModel.cs" />
     <Compile Include="Models\AutoShopModel.cs" />
-    <Compile Include="Models\TaxiStationModel.cs" />
+    <Compile Include="Models\CarForSaleModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle\Machinery.csproj">
+      <Project>{b54e0193-5921-4bb0-9759-7517495daa82}</Project>
+      <Name>Machinery</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

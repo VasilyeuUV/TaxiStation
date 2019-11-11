@@ -1,16 +1,15 @@
 ﻿using TaxiStation.Interfaces;
 
-namespace TaxiStation.MachinerySystems.Brand
+namespace TaxiStation.Vehicles
 {
-
-    /// <summary>
-    /// Machinery Brand
-    /// </summary>
-    public class Brand
+    class CarBuilder : IVehicleBuilder
     {
+
 
         #region FIELDS
         //##################################################################################################################
+
+        private Car _car = new Car();
 
         #endregion // FIELDS
 
@@ -19,23 +18,22 @@ namespace TaxiStation.MachinerySystems.Brand
         #region PROPERTIES
         //##################################################################################################################
 
-        /// <summary>
-        /// Machinery brand Name
-        /// </summary>
-        public string Name { get; private set; }
 
 
 
         #endregion // PROPERTIES
 
 
+
+
         #region CTOR
         //##################################################################################################################
 
-        public Brand(string name)
+        public CarBuilder()
         {
-            this.Name = name;
+            this.Reset();                   // Clear this class and create new class object
         }
+
 
         #endregion // CTOR
 
@@ -44,8 +42,32 @@ namespace TaxiStation.MachinerySystems.Brand
         #region METHODS
         //##################################################################################################################
 
+        /// <summary>
+        /// Reset this class
+        /// </summary>
+        private void Reset()
+        {
+            this._car = new Car();
+        }
+
+        /// <summary>
+        /// Set car brand
+        /// </summary>
+        public void SetBrand()
+        {
+            this._car.Brand = new MachinerySystems.Brand();
+        }
+
+        public void SetEngine()
+        {
+            this._car.Engine = new MachinerySystems.Mover();
+        }
+
 
         #endregion // METHODS
+
+
+
 
 
     }

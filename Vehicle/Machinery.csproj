@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{40C39FD4-FC1E-4451-8DE4-2073882E4F6F}</ProjectGuid>
+    <ProjectGuid>{B54E0193-5921-4BB0-9759-7517495DAA82}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TaxiStation</RootNamespace>
-    <AssemblyName>TaxiStation</AssemblyName>
+    <RootNamespace>Vehicle</RootNamespace>
+    <AssemblyName>Vehicle</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IPriceable.cs" />
-    <Compile Include="Models\AutoParkModel.cs" />
-    <Compile Include="Models\AutoShopModel.cs" />
-    <Compile Include="Models\TaxiStationModel.cs" />
+    <Compile Include="Enums\EnumCarsBrand.cs" />
+    <Compile Include="Enums\EnumFuelType.cs" />
+    <Compile Include="Interfaces\IFuelConsumption.cs" />
+    <Compile Include="Interfaces\IFuelConsumptionVehicle.cs" />
+    <Compile Include="Interfaces\IMoveable.cs" />
+    <Compile Include="Interfaces\IMover.cs" />
+    <Compile Include="Interfaces\ISelfPropelled.cs" />
+    <Compile Include="MachinerySystems\Brand.cs" />
+    <Compile Include="MachinerySystems\Engines\DieselEngine.cs" />
+    <Compile Include="MachinerySystems\Engines\ICEEngineBase.cs" />
+    <Compile Include="Interfaces\IEngine.cs" />
+    <Compile Include="MachinerySystems\Engines\IMoverFactory.cs" />
+    <Compile Include="MachinerySystems\FuelSystems\FuelSystemBase.cs" />
+    <Compile Include="MachinerySystems\Mover.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vehicles\Car.cs" />
+    <Compile Include="Vehicles\CarBuilder.cs" />
+    <Compile Include="Vehicles\IVehicleBuilder.cs" />
+    <Compile Include="Vehicles\VehicleBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

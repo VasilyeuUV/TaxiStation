@@ -1,22 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaxiStation.Enums;
-using TaxiStation.Interfaces;
-using TaxiStation.MachinerySystems.Brand;
 
 namespace TaxiStation.Vehicles
 {
-    public abstract class VehicleBase : ISelfPropelled, IPriceable
+
+    /// <summary>
+    /// Civilian vehicle up to 3.5 tons
+    /// </summary>
+    public class Car : VehicleBase
     {
 
         #region FIELDS
         //##################################################################################################################
-
-
-
 
         #endregion // FIELDS
 
@@ -26,16 +20,9 @@ namespace TaxiStation.Vehicles
         //##################################################################################################################
 
         /// <summary>
-        /// Vehicle brand
+        /// Car VIN
         /// </summary>
-        public Brand Brand { get; protected set; }
-
-        /// <summary>
-        /// Vehicle Price
-        /// </summary>
-        public int CurrentPrice { get; set; }
-
-
+        public Guid VIN { get; private set; }
 
 
         #endregion // PROPERTIES
@@ -44,14 +31,11 @@ namespace TaxiStation.Vehicles
         #region CTOR
         //##################################################################################################################
 
-        public VehicleBase()
+        public Car()
         {
 
+            this.VIN = Guid.NewGuid();
         }
-
-
-
-
 
 
 
@@ -63,16 +47,11 @@ namespace TaxiStation.Vehicles
         //##################################################################################################################
 
 
-        private int SetFuelConsumtionRND()
-        {
-            Random rnd = new Random();
-            return rnd.Next(3, 15);     //Получить случайное число (в диапазоне от 3 до 15)
-        }
-
-
 
 
         #endregion // METHODS
+
+
 
     }
 }

@@ -2,7 +2,7 @@
 {
     public enum EnumCarsBrand
     {
-        Acura,
+        Acura = 1,
         AlfaRomeo,
         AstonMartin,
         Audi,

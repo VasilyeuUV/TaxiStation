@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaxiStation.MachinerySystems.Engine
+namespace TaxiStation.MachinerySystems.Engines
 {
     internal class DieselEngine : ICEEngineBase
     {

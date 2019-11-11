@@ -2,7 +2,7 @@
 using TaxiStation.Enums;
 using TaxiStation.Interfaces;
 
-namespace TaxiStation.MachinerySystems.Engine
+namespace TaxiStation.MachinerySystems.Engines
 {
     /// <summary>
     /// Internal combustion engine abstract class

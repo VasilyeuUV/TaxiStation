@@ -4,9 +4,9 @@
     /// <summary>
     /// Pattern BUILDER
     /// interface Builder
-    /// announces all possible product configuration steps
+    /// announces all possible product configuration steps for build Vehicle
     /// </summary>
-    public interface IVehicleBuilder
+    interface IVehicleBuilder
     {
 
         /// <summary>
@@ -18,11 +18,8 @@
         /// Set macinery engine
         /// </summary>
         void SetEngine();
-
-
-
-
-
+        
+        
 
 
     }
