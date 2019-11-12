@@ -49,6 +49,7 @@
     <Compile Include="Interfaces\IFuelConsumptionVehicle.cs" />
     <Compile Include="Interfaces\IMoveable.cs" />
     <Compile Include="Interfaces\IMover.cs" />
+    <Compile Include="Interfaces\IPriceable.cs" />
     <Compile Include="Interfaces\ISelfPropelled.cs" />
     <Compile Include="MachinerySystems\Brand.cs" />
     <Compile Include="MachinerySystems\Engines\DieselEngine.cs" />

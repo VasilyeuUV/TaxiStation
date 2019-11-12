@@ -43,9 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IPriceable.cs" />
+    <Compile Include="Interfaces\ITaxiStationBuilder.cs" />
     <Compile Include="Models\AutoParkModel.cs" />
-    <Compile Include="Models\AutoShopModel.cs" />
     <Compile Include="Models\TaxiStationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
