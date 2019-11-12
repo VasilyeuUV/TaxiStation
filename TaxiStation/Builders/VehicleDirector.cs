@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using TaxiStation.Interfaces;
 
 namespace TaxiStation.Models
 {
-    public class TaxiStationModel
+    class VehicleDirector
     {
 
         #region FIELDS
         //##################################################################################################################
 
-        private GarageModel _garage;    // passenger cars in autopark 
+        private IVehicleListBuilder _vehicleListBuilder;
+
+
+
 
 
         #endregion // FIELDS
@@ -23,6 +22,7 @@ namespace TaxiStation.Models
         #region PROPERTIES
         //##################################################################################################################
 
+        internal IVehicleListBuilder VehicleListBuilder { set => _vehicleListBuilder = value; }
 
         #endregion // PROPERTIES
 
@@ -30,13 +30,6 @@ namespace TaxiStation.Models
         #region CTOR
         //##################################################################################################################
 
-        public TaxiStationModel()
-        {
-            _garage = new GarageModel()
-            {
-
-            };
-        }
 
         #endregion // CTOR
 
@@ -45,8 +38,13 @@ namespace TaxiStation.Models
         #region METHODS
         //##################################################################################################################
 
-        #endregion // METHODS
+        public void BuildCarList()
+        {
+            this._vehicleListBuilder.BuildCarList();
+        }
 
+
+        #endregion // METHODS
 
     }
 }

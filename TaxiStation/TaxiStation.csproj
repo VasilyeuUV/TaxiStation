@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\ITaxiStationBuilder.cs" />
-    <Compile Include="Models\AutoParkModel.cs" />
+    <Compile Include="ConsoleMenu\Menu.cs" />
+    <Compile Include="Builders\IVehicleListBuilder.cs" />
+    <Compile Include="Builders\VehicleDirector.cs" />
+    <Compile Include="Models\GarageModel.cs" />
     <Compile Include="Models\TaxiStationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -53,6 +55,8 @@
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

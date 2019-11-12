@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace TaxiStation.Models
 {
-    public class TaxiStationModel
+    public class GarageModel
     {
 
         #region FIELDS
         //##################################################################################################################
 
-        private GarageModel _garage;    // passenger cars in autopark 
+
+        private List<object> _vehiclesList = new List<object>();
+        
 
 
         #endregion // FIELDS
@@ -30,13 +28,6 @@ namespace TaxiStation.Models
         #region CTOR
         //##################################################################################################################
 
-        public TaxiStationModel()
-        {
-            _garage = new GarageModel()
-            {
-
-            };
-        }
 
         #endregion // CTOR
 
@@ -45,7 +36,16 @@ namespace TaxiStation.Models
         #region METHODS
         //##################################################################################################################
 
+        public void AddVehicleLst(object lst)
+        {
+            this._vehiclesList.Add(lst);
+        }
+
+
         #endregion // METHODS
+
+
+
 
 
     }
