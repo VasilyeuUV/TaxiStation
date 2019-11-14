@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
 
 namespace TaxiStation.Models
 {
@@ -9,8 +9,8 @@ namespace TaxiStation.Models
         //##################################################################################################################
 
 
-        private List<object> _vehiclesList = new List<object>();
-        
+        private ArrayList _vehicles = new ArrayList();      // any type vehicles list
+
 
 
         #endregion // FIELDS
@@ -28,6 +28,10 @@ namespace TaxiStation.Models
         #region CTOR
         //##################################################################################################################
 
+        public GarageModel()
+        {
+
+        }
 
         #endregion // CTOR
 
@@ -36,10 +40,15 @@ namespace TaxiStation.Models
         #region METHODS
         //##################################################################################################################
 
-        public void AddVehicleLst(object lst)
+        /// <summary>
+        /// Add new vehicles list
+        /// </summary>
+        /// <param name="lst">ICollection vehicles list</param>
+        public void Add(ICollection lst)
         {
-            this._vehiclesList.Add(lst);
+            this._vehicles.Add(lst);
         }
+
 
 
         #endregion // METHODS

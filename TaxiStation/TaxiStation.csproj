@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\GarageCarBuilder.cs" />
     <Compile Include="ConsoleMenu\Menu.cs" />
-    <Compile Include="Builders\IVehicleListBuilder.cs" />
-    <Compile Include="Builders\VehicleDirector.cs" />
+    <Compile Include="Builders\IGarageBuilder.cs" />
+    <Compile Include="Builders\GarageDirector.cs" />
     <Compile Include="Models\GarageModel.cs" />
     <Compile Include="Models\TaxiStationModel.cs" />
     <Compile Include="Program.cs" />
@@ -57,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vehicle\Machinery.csproj">
+      <Project>{B54E0193-5921-4BB0-9759-7517495DAA82}</Project>
+      <Name>Machinery</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

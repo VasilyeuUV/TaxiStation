@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace TaxiStation.Models
         #region FIELDS
         //##################################################################################################################
 
-        private GarageModel _garage;    // passenger cars in autopark 
+        private GarageModel _garage;            // TaxiStation Garage
+
+
 
 
         #endregion // FIELDS
@@ -23,6 +26,12 @@ namespace TaxiStation.Models
         #region PROPERTIES
         //##################################################################################################################
 
+        /// <summary>
+        /// TaxiStation Garage
+        /// </summary>
+        public GarageModel Garage { get => _garage; }
+
+
 
         #endregion // PROPERTIES
 
@@ -30,13 +39,7 @@ namespace TaxiStation.Models
         #region CTOR
         //##################################################################################################################
 
-        public TaxiStationModel()
-        {
-            _garage = new GarageModel()
-            {
 
-            };
-        }
 
         #endregion // CTOR
 
@@ -44,6 +47,7 @@ namespace TaxiStation.Models
 
         #region METHODS
         //##################################################################################################################
+
 
         #endregion // METHODS
 
