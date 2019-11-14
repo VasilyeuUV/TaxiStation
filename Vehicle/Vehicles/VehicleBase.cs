@@ -1,7 +1,7 @@
-﻿using TaxiStation.Interfaces;
-using TaxiStation.MachinerySystems;
+﻿using Machinery.Interfaces;
+using Machinery.MachinerySystems;
 
-namespace TaxiStation.Vehicles
+namespace Machinery.Vehicles
 {
     public abstract class VehicleBase : ISelfPropelled, IPriceable
     {
@@ -22,12 +22,12 @@ namespace TaxiStation.Vehicles
         /// <summary>
         /// Vehicle brand
         /// </summary>
-        public Brand Brand { get; set; }
+        public Brand Brand { get; internal set; }
 
         /// <summary>
         /// Vehicle Engine
         /// </summary>
-        public Mover Engine { get; set; }
+        public Mover Engine { get; internal set; }
 
 
         /// <summary>
@@ -42,21 +42,6 @@ namespace TaxiStation.Vehicles
         /// </summary>
         public int CurrentPrice { get; set; }
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         #endregion // PROPERTIES
 
@@ -67,7 +52,7 @@ namespace TaxiStation.Vehicles
         public VehicleBase()
         {
 
-            this.ForwardMaxSpeed = SetFuelConsumtionRND();          // 
+            //this.ForwardMaxSpeed = SetMaxSpeedRND();          // 
         }
 
 
@@ -98,6 +83,7 @@ namespace TaxiStation.Vehicles
             //return rnd.Next(100, 280);     // Получить случайное число (в диапазоне от 100 до 280)
             return 0;
         }
+
 
 
         #endregion // METHODS

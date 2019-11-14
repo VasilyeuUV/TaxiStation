@@ -1,7 +1,7 @@
 ﻿using System;
-using TaxiStation.Enums;
+using Machinery.Enums;
 
-namespace TaxiStation.MachinerySystems
+namespace Machinery.MachinerySystems
 {
 
     /// <summary>

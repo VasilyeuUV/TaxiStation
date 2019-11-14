@@ -54,13 +54,13 @@ namespace TaxiStation.Builders
         private void Reset()
         {
             this._garage = new GarageModel();
-        }
+        } 
 
 
         /// <summary>
-        /// 
+        /// Return new Garage
         /// </summary>
-        /// <returns>new Garage object</returns>
+        /// <returns>GarageModel (new Garage object)</returns>
         public GarageModel GetGarage()
         {
             GarageModel result = this._garage;
@@ -74,13 +74,19 @@ namespace TaxiStation.Builders
         /// </summary>
         public void BuildCarList()
         {
+            var director = new VehicleDirector();
+            var builder = new CarBuilder();
+            director.GarageBuilder = builder;
+            director.BuildGarageCar();
+            this._garage = builder.GetGarage();
+
             List<Car> carList = new List<Car>()
             {
                 new Car(),
                 new Car(),
                 new Car()
             };
-            this._garage.Add(carList);
+            this._garage.Add(typeof(Car).Name, carList);
         }
 
         #endregion // METHODS

@@ -1,4 +1,4 @@
-﻿namespace TaxiStation.Enums
+﻿namespace Machinery.Enums
 {
     public enum EnumCarsBrand
     {

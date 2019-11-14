@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TaxiStation.Vehicles
+namespace Machinery.Vehicles
 {
 
     /// <summary>

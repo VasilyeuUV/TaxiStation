@@ -1,4 +1,4 @@
-﻿namespace TaxiStation.Interfaces
+﻿namespace Machinery.Interfaces
 {
     /// <summary>
     /// The main speed parameters of the object to move (up, down, left, right, forward, backward)

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builders\VehicleDirector.cs" />
     <Compile Include="Enums\EnumCarsBrand.cs" />
     <Compile Include="Enums\EnumFuelType.cs" />
     <Compile Include="Interfaces\IFuelConsumption.cs" />
@@ -61,8 +62,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicles\Car.cs" />
-    <Compile Include="Vehicles\CarBuilder.cs" />
-    <Compile Include="Vehicles\IVehicleBuilder.cs" />
+    <Compile Include="Builders\CarBuilder.cs" />
+    <Compile Include="Builders\IVehicleBuilder.cs" />
     <Compile Include="Vehicles\VehicleBase.cs" />
   </ItemGroup>
   <ItemGroup>

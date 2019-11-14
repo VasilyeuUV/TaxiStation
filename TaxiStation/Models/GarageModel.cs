@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
+using TaxiStation.Vehicles;
 
 namespace TaxiStation.Models
 {
@@ -7,12 +9,9 @@ namespace TaxiStation.Models
 
         #region FIELDS
         //##################################################################################################################
-
-
-        private ArrayList _vehicles = new ArrayList();      // any type vehicles list
-
-
-
+        
+        private Dictionary<string, ICollection> _vehicles = new Dictionary<string, ICollection>();      // any type vehicles list
+               
         #endregion // FIELDS
 
 
@@ -21,6 +20,7 @@ namespace TaxiStation.Models
         #region PROPERTIES
         //##################################################################################################################
 
+        internal Dictionary<string, ICollection> Vehicles { get => _vehicles; }
 
         #endregion // PROPERTIES
 
@@ -28,10 +28,6 @@ namespace TaxiStation.Models
         #region CTOR
         //##################################################################################################################
 
-        public GarageModel()
-        {
-
-        }
 
         #endregion // CTOR
 
@@ -43,13 +39,12 @@ namespace TaxiStation.Models
         /// <summary>
         /// Add new vehicles list
         /// </summary>
-        /// <param name="lst">ICollection vehicles list</param>
-        public void Add(ICollection lst)
+        /// <param name="vType">typeName of vehicles list</param>
+        /// <param name="lst">vehicles list </param>
+        public void Add(string vType, ICollection lst)
         {
-            this._vehicles.Add(lst);
+            this.Vehicles.Add(vType, lst);
         }
-
-
 
         #endregion // METHODS
 

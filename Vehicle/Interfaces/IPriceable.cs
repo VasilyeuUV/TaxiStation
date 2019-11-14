@@ -1,4 +1,4 @@
-﻿namespace TaxiStation.Interfaces
+﻿namespace Machinery.Interfaces
 {
 
     /// <summary>

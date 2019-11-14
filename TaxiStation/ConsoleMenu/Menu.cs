@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TaxiStation.ConsoleMenu
 {
@@ -34,7 +30,12 @@ namespace TaxiStation.ConsoleMenu
         #region METHODS
         //##################################################################################################################
 
-        public int PrintMenu()
+        /// <summary>
+        /// Temporary Control TaxiStation
+        /// </summary>
+        /// <param name="taxiStation"></param>
+        /// <returns></returns>
+        public int PrintMenu(Models.TaxiStationModel taxiStation)
         {
             ConsoleKeyInfo key;
             do
@@ -44,6 +45,9 @@ namespace TaxiStation.ConsoleMenu
                 Console.WriteLine("ТАКСОПАРК. Управление.");
                 Console.WriteLine();
 
+                ViewAutoPark(taxiStation);                
+
+                // MENU
                 for (int i = 0; i < menuItems.Length; i++)
                 {
                     if (counter == i)
@@ -75,6 +79,15 @@ namespace TaxiStation.ConsoleMenu
             }
             while (key.Key != ConsoleKey.Enter);
             return counter;
+        }
+
+        /// <summary>
+        /// View vehicles in the Garage
+        /// </summary>
+        private void ViewAutoPark(Models.TaxiStationModel taxiStation)
+        {
+            Console.WriteLine(taxiStation.ViewGarageAutopark());
+            Console.WriteLine();
         }
 
         #endregion // METHODS

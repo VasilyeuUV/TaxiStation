@@ -1,6 +1,6 @@
-﻿using TaxiStation.Enums;
+﻿using Machinery.Enums;
 
-namespace TaxiStation.MachinerySystems.FuelSystem
+namespace Machinery.MachinerySystems.FuelSystem
 {
     public abstract class FuelSystemBase
     {

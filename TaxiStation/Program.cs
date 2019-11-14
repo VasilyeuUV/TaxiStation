@@ -1,26 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TaxiStation.ConsoleMenu;
+using TaxiStation.Models;
 
 namespace TaxiStation
 {
     class Program
     {
-
         delegate void method();
 
         static void Main(string[] args)
         {
+
+            // Create new TaxiStation
+            TaxiStationModel taxiStation = new TaxiStationModel();
+
+            // MENU
             string[] items = { "Стоимость автопарка", "Сортировать автомобили по расходу топлива", "Поиск автомобиля", "Купить автомобиль", "Выход" };
             method[] methods = new method[] { GetPriceAllCars, SortCarByFuelСonsumption, FindCarBySpeed, BuyCar, Exit };
             Menu menu = new Menu(items);
             int menuResult;
             do
             {
-                menuResult = menu.PrintMenu();
+                menuResult = menu.PrintMenu(taxiStation);
                 Console.WriteLine();
                 methods[menuResult]();
                 Console.WriteLine();

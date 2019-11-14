@@ -1,6 +1,4 @@
-﻿using TaxiStation.Enums;
-
-namespace TaxiStation.Interfaces
+﻿namespace Machinery.Interfaces
 {
     public interface IFuelConsumption
     {

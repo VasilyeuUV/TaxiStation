@@ -1,6 +1,6 @@
-﻿using TaxiStation.Interfaces;
+﻿using Machinery.Vehicles;
 
-namespace TaxiStation.Vehicles
+namespace Machinery.Builders
 {
     class CarBuilder : IVehicleBuilder
     {
@@ -49,6 +49,19 @@ namespace TaxiStation.Vehicles
         {
             this._car = new Car();
         }
+
+
+        /// <summary>
+        /// Return new Car
+        /// </summary>
+        /// <returns>Car (new Car object)</returns>
+        public Car GetCar()
+        {
+            Car result = this._car;
+            this.Reset();
+            return result;
+        }
+               
 
         /// <summary>
         /// Set car brand

@@ -1,7 +1,4 @@
-﻿using TaxiStation.Enums;
-using TaxiStation.MachinerySystems;
-
-namespace TaxiStation.Interfaces
+﻿namespace Machinery.Interfaces
 {
 
     /// <summary>
