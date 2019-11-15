@@ -1,4 +1,5 @@
-﻿using Machinery.Vehicles;
+﻿using Machinery.Builders;
+using Machinery.Vehicles;
 using System;
 
 namespace Shop.Models
@@ -23,7 +24,11 @@ namespace Shop.Models
 
         public CarForSaleModel()
         {
-            this.Car = new Car();
+            var director = new VehicleDirector();
+            var builder = new CarBuilder();
+            director.VehicleBuilder = builder;
+            director.BuildCar();
+            this.Car = builder.GetCar();
             this.CurrentPrice = SetPriceRND();
         }
 

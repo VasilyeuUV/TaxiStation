@@ -104,7 +104,9 @@ namespace TaxiStation.Models
                 if (item is VehicleBase)
                 {
                     var vehicle = item as VehicleBase;
-                    strVehicleInfo.Append(String.Format(CultureInfo.InvariantCulture, "- Модель: {0}; Цена: {1:#,#} BYN; Скорость: {2} км/ч; Расход:{3} л/100 км;\n", vehicle.Brand, vehicle.CurrentPrice, vehicle.ForwardMaxSpeed, vehicle.Engine));
+                    strVehicleInfo.Append(String.Format(CultureInfo.InvariantCulture, 
+                        "- Модель: {0,13};    Цена: {1,7:#,#} BYN;    Скорость: {2,3} км/ч;    Расход:{3,3} л/100 км;\n", 
+                        vehicle.Brand.Name, vehicle.CurrentPrice, vehicle.ForwardMaxSpeed, vehicle.Engine));
                 }                
             }
             return strVehicleInfo.ToString();
