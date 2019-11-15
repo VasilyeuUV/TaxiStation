@@ -1,6 +1,4 @@
-﻿using TaxiStation.Interfaces;
-
-namespace TaxiStation.Builders
+﻿namespace TaxiStation.Builders
 {
 
     /// <summary>

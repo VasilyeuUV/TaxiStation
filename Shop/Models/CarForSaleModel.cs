@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TaxiStation.Vehicles;
+﻿using Machinery.Vehicles;
+using System;
 
 namespace Shop.Models
 {

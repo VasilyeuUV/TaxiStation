@@ -2,7 +2,7 @@
 
 namespace Machinery.Builders
 {
-    class CarBuilder : IVehicleBuilder
+    public class CarBuilder : IVehicleBuilder
     {
 
 

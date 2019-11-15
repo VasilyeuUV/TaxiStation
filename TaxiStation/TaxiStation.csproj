@@ -60,6 +60,10 @@
     <Folder Include="Interfaces\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Shop\Shop.csproj">
+      <Project>{7FFEC07A-623F-4196-B9F7-91221603EDA9}</Project>
+      <Name>Shop</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Vehicle\Machinery.csproj">
       <Project>{B54E0193-5921-4BB0-9759-7517495DAA82}</Project>
       <Name>Machinery</Name>

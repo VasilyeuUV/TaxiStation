@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Machinery.Vehicles;
+using System;
 using System.Collections.Generic;
-using TaxiStation.Vehicles;
 
 namespace Shop.Models
 {
@@ -81,9 +81,15 @@ namespace Shop.Models
             {
                 _carForSaleDict = SetVehicleForSaleRND();
             }
-            DisplayCarForSale();
+            //DisplayCarForSale();
             return _saledCar.Car;
         }
+        public Car SaleCar()
+        {
+            return SaleCar(_carForSaleDict.Count - 1);
+        }
+
+
 
 
 

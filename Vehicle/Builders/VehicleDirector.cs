@@ -22,7 +22,7 @@ namespace Machinery.Builders
         /// <summary>
         /// VehicleBuilder Interface object
         /// </summary>
-        internal IVehicleBuilder VehicleBuilder { set => _vehicleBuilder = value; }
+        public IVehicleBuilder VehicleBuilder { set => _vehicleBuilder = value; }
 
         #endregion // PROPERTIES
 

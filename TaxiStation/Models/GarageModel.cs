@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using Machinery.Vehicles;
+using Shop.Models;
+using System;
+using System.Collections;
 using System.Collections.Generic;
-using TaxiStation.Vehicles;
 
 namespace TaxiStation.Models
 {
@@ -37,14 +39,28 @@ namespace TaxiStation.Models
         //##################################################################################################################
 
         /// <summary>
-        /// Add new vehicles list
+        /// Add new vehicles to Garage 
         /// </summary>
-        /// <param name="vType">typeName of vehicles list</param>
-        /// <param name="lst">vehicles list </param>
-        public void Add(string vType, ICollection lst)
+        /// <param name="car"></param>
+        internal void AddVehicle<T>(T car) where T : VehicleBase
         {
-            this.Vehicles.Add(vType, lst);
+            Type V = car.GetType();
+            if (_vehicles.ContainsKey(V.Name))
+            {
+                dynamic list = _vehicles[V.Name];
+                list.Add(car);
+                ICollection collection = list;
+                _vehicles[V.Name] = list;
+            }
+            else
+            {
+                List<T> lst = new List<T>();
+                lst.Add(car);
+                ICollection collection = lst;
+                this.Vehicles.Add(V.Name, lst);
+            }
         }
+
 
         #endregion // METHODS
 

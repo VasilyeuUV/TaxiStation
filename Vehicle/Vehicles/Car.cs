@@ -33,7 +33,6 @@ namespace Machinery.Vehicles
 
         public Car()
         {
-
             this.VIN = Guid.NewGuid();
         }
 

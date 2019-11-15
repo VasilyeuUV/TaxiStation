@@ -1,5 +1,6 @@
 ﻿using Machinery.Interfaces;
 using Machinery.MachinerySystems;
+using System;
 
 namespace Machinery.Vehicles
 {
@@ -52,7 +53,7 @@ namespace Machinery.Vehicles
         public VehicleBase()
         {
 
-            //this.ForwardMaxSpeed = SetMaxSpeedRND();          // 
+            this.ForwardMaxSpeed = SetMaxSpeedRND();          // 
         }
 
 
@@ -79,9 +80,8 @@ namespace Machinery.Vehicles
 
         private int SetMaxSpeedRND()
         {
-            //Random rnd = new Random();
-            //return rnd.Next(100, 280);     // Получить случайное число (в диапазоне от 100 до 280)
-            return 0;
+            Random rnd = new Random();
+            return rnd.Next(100, 280);     // Получить случайное число (в диапазоне от 100 до 280)
         }
 
 

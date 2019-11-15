@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Machinery.Vehicles;
+using Shop.Models;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using TaxiStation.Builders;
-using TaxiStation.Vehicles;
 
 namespace TaxiStation.Models
 {
@@ -42,14 +44,36 @@ namespace TaxiStation.Models
         {
 
             // Create Garage
-            var director = new GarageDirector();
-            var builder = new GarageCarBuilder();
-            director.GarageBuilder = builder;
-            director.BuildGarageCar();
-            this._garage = builder.GetGarage();
+            //var director = new GarageDirector();
+            //var builder = new GarageCarBuilder();
+            //director.GarageBuilder = builder;
+            //director.BuildGarageCar();
+            //this._garage = builder.GetGarage();
+            //this._garage.Add();
+
+
+            this._garage = new GarageModel();
+            // добавим автомобили в гараж
+            for (int i = 0; i < 3; i++)
+            {
+                var newCar = BuyCar();
+                if (newCar != null)
+                {
+                    this._garage.AddVehicle(newCar);
+                }
+            }
         }
 
-        
+
+
+
+        private Car BuyCar()
+        {
+            AutoShopModel autoShop = new AutoShopModel();
+            return autoShop.SaleCar();
+        }
+
+
 
 
         #endregion // CTOR
@@ -80,7 +104,7 @@ namespace TaxiStation.Models
                 if (item is VehicleBase)
                 {
                     var vehicle = item as VehicleBase;
-                    strVehicleInfo.Append(String.Format("- Модель: {0}; Цена: {1} BYN; Скорость: {2} км/ч; Расход:{3} л/100 км;\n", vehicle.Brand, vehicle.CurrentPrice, vehicle.ForwardMaxSpeed, vehicle.Engine));
+                    strVehicleInfo.Append(String.Format(CultureInfo.InvariantCulture, "- Модель: {0}; Цена: {1:#,#} BYN; Скорость: {2} км/ч; Расход:{3} л/100 км;\n", vehicle.Brand, vehicle.CurrentPrice, vehicle.ForwardMaxSpeed, vehicle.Engine));
                 }                
             }
             return strVehicleInfo.ToString();

@@ -6,7 +6,7 @@
     /// interface Builder
     /// announces all possible product configuration steps for build Vehicle
     /// </summary>
-    interface IVehicleBuilder
+    public interface IVehicleBuilder
     {
 
         /// <summary>

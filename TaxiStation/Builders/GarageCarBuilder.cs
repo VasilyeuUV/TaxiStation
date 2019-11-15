@@ -1,6 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using Machinery.Builders;
+using Machinery.Vehicles;
+using System.Collections.Generic;
 using TaxiStation.Models;
-using TaxiStation.Vehicles;
 
 namespace TaxiStation.Builders
 {
@@ -74,19 +75,19 @@ namespace TaxiStation.Builders
         /// </summary>
         public void BuildCarList()
         {
-            var director = new VehicleDirector();
-            var builder = new CarBuilder();
-            director.GarageBuilder = builder;
-            director.BuildGarageCar();
-            this._garage = builder.GetGarage();
+            //var director = new VehicleDirector();
+            //var builder = new CarBuilder();
+            //director.VehicleBuilder = builder;
+            //director.BuildCar();
+            //builder.GetCar()
 
-            List<Car> carList = new List<Car>()
-            {
-                new Car(),
-                new Car(),
-                new Car()
-            };
-            this._garage.Add(typeof(Car).Name, carList);
+            //List<Car> carList = new List<Car>()
+            //{
+            //   ,
+            //    builder.GetCar(),
+            //    builder.GetCar()
+            //};
+            //this._garage.Add(typeof(Car).Name, carList);
         }
 
         #endregion // METHODS
