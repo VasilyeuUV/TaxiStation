@@ -1,12 +1,13 @@
 ﻿using System;
 using TaxiStation.ConsoleMenu;
 using TaxiStation.Models;
+using System.Linq;
 
 namespace TaxiStation
 {
     class Program
     {
-        delegate void method();
+        delegate void method(TaxiStationModel taxiStation);
 
         static void Main(string[] args)
         {
@@ -23,36 +24,37 @@ namespace TaxiStation
             {
                 menuResult = menu.PrintMenu(taxiStation);
                 Console.WriteLine();
-                methods[menuResult]();
+                methods[menuResult](taxiStation);
                 Console.WriteLine();
                 Console.WriteLine("Для продолжения нажмите любую клавишу");
                 Console.ReadKey();
             } while (menuResult != items.Length - 1);
         }
 
-        static void GetPriceAllCars()
+        static void GetPriceAllCars(TaxiStationModel taxiStation)
         {
-            Console.WriteLine("Общая стоимость автомобилей в гараже составляет {0} BYN.", "\"Нет данных\"");
+            Console.WriteLine("Общая стоимость автомобилей в гараже составляет {0,8:#,#} BYN.", taxiStation.GetVehiclesTotalCost());
         }
 
-        static void SortCarByFuelСonsumption()
+        static void SortCarByFuelСonsumption(TaxiStationModel taxiStation)
         {
-            Console.WriteLine("Выбрано действие 2");
+            taxiStation.GetSortedCars();
+            
         }
 
-        static void FindCarBySpeed()
+        static void FindCarBySpeed(TaxiStationModel taxiStation)
         {
             Console.WriteLine("Выбрано действие 3");
         }
 
-        static void BuyCar()
+        static void BuyCar(TaxiStationModel taxiStation)
         {
 
         }
 
-        static void Exit()
+        static void Exit(TaxiStationModel taxiStation)
         {
-            Console.WriteLine("Приложение заканчивает работу!");
+            Console.WriteLine("Таксопарк заканчивает работу!");
         }
 
     }

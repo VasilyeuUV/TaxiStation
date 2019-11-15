@@ -16,7 +16,7 @@ namespace Machinery.MachinerySystems.FuelSystem
         //##################################################################################################################
 
         /// <summary>
-        /// Engine fuel type
+        /// Model fuel type
         /// </summary>
         public EnumFuelType FuelType { get; protected set; }
 

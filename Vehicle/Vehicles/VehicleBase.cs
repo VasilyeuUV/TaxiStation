@@ -26,7 +26,7 @@ namespace Machinery.Vehicles
         public Brand Brand { get; internal set; }
 
         /// <summary>
-        /// Vehicle Engine
+        /// Vehicle Model
         /// </summary>
         public Mover Engine { get; internal set; }
 
@@ -68,14 +68,6 @@ namespace Machinery.Vehicles
 
         #region METHODS
         //##################################################################################################################
-
-
-        private int SetFuelConsumtionRND()
-        {
-            //Random rnd = new Random();
-            //return rnd.Next(3, 15);     // Получить случайное число (в диапазоне от 3 до 15)
-            return 0;
-        }
 
 
         private int SetMaxSpeedRND()

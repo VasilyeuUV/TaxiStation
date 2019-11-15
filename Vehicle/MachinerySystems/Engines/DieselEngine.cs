@@ -1,6 +1,6 @@
 ﻿namespace Machinery.MachinerySystems.Engines
 {
-    internal class DieselEngine : ICEEngineBase
+    public class DieselEngine : ICEEngineBase
     {
 
 
@@ -33,7 +33,7 @@
 
         public DieselEngine()
         {
-            this.Name = "Disel Engine";
+            this.Name = "Disel";
             this.FuelConsumptionTown = SetFuelConsumtionRND();
         }
 

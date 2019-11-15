@@ -1,4 +1,6 @@
-﻿namespace Machinery.MachinerySystems
+﻿using Machinery.MachinerySystems.Engines;
+
+namespace Machinery.MachinerySystems
 {
 
 
@@ -20,7 +22,7 @@
         #region PROPERTIES
         //##################################################################################################################
 
-        public dynamic Engine { get; private set; }
+        public dynamic Model { get; private set; }
 
 
         #endregion // PROPERTIES
@@ -31,7 +33,7 @@
 
         public Mover()
         {
-
+            this.Model = new DieselEngine();
         }
 
 
@@ -41,6 +43,9 @@
 
         #region METHODS
         //##################################################################################################################
+
+
+
 
 
         #endregion // METHODS
