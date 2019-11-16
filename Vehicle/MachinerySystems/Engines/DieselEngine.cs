@@ -34,7 +34,7 @@
         public DieselEngine()
         {
             this.Name = "Disel";
-            this.FuelConsumptionTown = SetFuelConsumtionRND();
+            this.FuelConsumptionTown = SetFuelConsumtionRND(Production.rnd);
         }
 
         #endregion // CTOR

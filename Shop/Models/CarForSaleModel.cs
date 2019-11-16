@@ -1,4 +1,4 @@
-﻿using Machinery.Builders;
+﻿using Machinery;
 using Machinery.Vehicles;
 using System;
 
@@ -22,14 +22,10 @@ namespace Shop.Models
         #region CTOR
         //##################################################################################################################
 
-        public CarForSaleModel()
+        public CarForSaleModel(Random rnd)
         {
-            var director = new VehicleDirector();
-            var builder = new CarBuilder();
-            director.VehicleBuilder = builder;
-            director.BuildCar();
-            this.Car = builder.GetCar();
-            this.CurrentPrice = SetPriceRND();
+            this.Car = Production.NewCar();
+            this.CurrentPrice = SetPriceRND(rnd);
         }
 
         #endregion // CTOR
@@ -42,10 +38,9 @@ namespace Shop.Models
         //##################################################################################################################
 
 
-        private int SetPriceRND()
+        private int SetPriceRND(Random rnd)
         {
-            Random rnd = new Random();
-            return rnd.Next(20_000, 160_000);
+            return rnd.Next(20_000, 100_000);
         }
 
         #endregion // METHODS

@@ -6,24 +6,14 @@ namespace Shop.Models
 {
     public class AutoShopModel
     {
-        #region Fields
+        #region FIELDS
         //##################################################################################################################
 
         private Dictionary<int, CarForSaleModel> _carForSaleDict;       // dictionary Cars for sale
 
+        private Random rnd = new Random();
 
-        #endregion // Fields
-
-
-
-
-        #region PROPERTIES
-        //##################################################################################################################
-
-
-
-        #endregion // PROPERTIES
-
+        #endregion // FIELDS
 
 
 
@@ -34,11 +24,7 @@ namespace Shop.Models
         {
             _carForSaleDict = SetVehicleForSaleRND();
         }
-
-
-
-
-
+        
         #endregion // CTOR
 
 
@@ -59,6 +45,7 @@ namespace Shop.Models
             {
                 Console.WriteLine("{0}. {1} - {2:N} BYN", i, _carForSaleDict[i].Car.Brand.Name, _carForSaleDict[i].CurrentPrice);
             }
+            Console.ReadKey();
         }
 
         /// <summary>
@@ -81,9 +68,9 @@ namespace Shop.Models
             {
                 _carForSaleDict = SetVehicleForSaleRND();
             }
-            //DisplayCarForSale();
             return _saledCar.Car;
         }
+
         public Car SaleCar()
         {
             return SaleCar(_carForSaleDict.Count - 1);
@@ -99,13 +86,12 @@ namespace Shop.Models
         /// <returns>New Dictionary Cars for sale</returns>
         private Dictionary<int, CarForSaleModel> SetVehicleForSaleRND()
         {
-            Random rnd = new Random();
             int n_cars = rnd.Next(3, 5);     // Получить случайное число (в диапазоне от 3 до 5)
 
             Dictionary<int, CarForSaleModel> _tmpLst = new Dictionary<int, CarForSaleModel>();
             for (int i = 0; i < n_cars; i++)
             {
-                _tmpLst.Add(i, new CarForSaleModel());
+                _tmpLst.Add(i, new CarForSaleModel(rnd));
             }
             return _tmpLst;
         }

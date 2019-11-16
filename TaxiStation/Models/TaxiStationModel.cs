@@ -15,14 +15,9 @@ namespace TaxiStation.Models
         //##################################################################################################################
 
         private GarageModel _garage;            // TaxiStation Garage
-
-
-
-
+        
         #endregion // FIELDS
-
-
-
+               
 
         #region PROPERTIES
         //##################################################################################################################
@@ -32,37 +27,30 @@ namespace TaxiStation.Models
         /// </summary>
         public GarageModel Garage { get => _garage; }
 
-
         #endregion // PROPERTIES
 
 
         #region CTOR
         //##################################################################################################################
 
-        public TaxiStationModel()
+        public TaxiStationModel() : this(null) { }
+        public TaxiStationModel(List<object> vehicles)
         {
-
-            // Create Garage
-            //var director = new GarageDirector();
-            //var builder = new GarageCarBuilder();
-            //director.GarageBuilder = builder;
-            //director.BuildGarageCar();
-            //this._garage = builder.GetGarage();
-            //this._garage.Add();
-
-
-            this._garage = new GarageModel();
-            // добавим автомобили в гараж
-            for (int i = 0; i < 3; i++)
+            if (vehicles == null)
             {
-                var newCar = BuyCar();
-                if (newCar != null)
+                this._garage = new GarageModel();
+                AutoShopModel autoShop = new AutoShopModel();
+                //autoShop.DisplayCarForSale();
+                for (int i = 0; i < 3; i++)                         // добавим автомобили в гараж
                 {
-                    this._garage.AddVehicle(newCar);
+                    this._garage.AddVehicle(BuyCar(autoShop));
                 }
             }
+            else
+            {
+                this._garage = new GarageModel(vehicles);
+            }
         }
-
 
         #endregion // CTOR
 
@@ -74,11 +62,18 @@ namespace TaxiStation.Models
         /// <summary>
         /// Sort Cars
         /// </summary>
-        internal void GetSortedCars()
+        internal string GetSortedCars()
         {
-            //var lst = this.Garage.Vehicles["Car"];
-
-
+            var lst = Garage.Vehicles.OrderBy(x => ((VehicleBase)x).Engine.Model.FuelConsumptionTown);
+            StringBuilder str = new StringBuilder();
+            str.Append("Транспортные средства, отсортированные по расходу топлива:\n");
+            foreach (var item in lst)
+            {
+                var vehicle = item as VehicleBase;
+                str.Append(String.Format("- {0,13};   Расход:{1,3} л/100 км;\n",
+                    vehicle.Brand.Name, vehicle.Engine.Model.FuelConsumptionTown));
+            }
+            return str.ToString();
         }
 
 
@@ -88,39 +83,50 @@ namespace TaxiStation.Models
         /// <returns></returns>
         internal int GetVehiclesTotalCost()
         {
-            int sum = 0;
+            return Garage.Vehicles.Sum(x => ((VehicleBase)x).CurrentPrice);
+        }
 
+        /// <summary>
+        /// Find vehicles by speed
+        /// </summary>
+        /// <param name="from">from speed</param>
+        /// <param name="to">to speed</param>
+        /// <returns>string result</returns>
+        internal string FindVehiclesBySpeed(int from, int to)
+        {
+            // Здесь проверка входных данных на валидность
+            // ...
 
-            sum = Garage.Vehicles.Sum(x =>
+            var lst = Garage.Vehicles.Where(x => ((VehicleBase)x).ForwardMaxSpeed >= from && ((VehicleBase)x).ForwardMaxSpeed <= to)
+                                     .OrderBy(x => ((VehicleBase)x).ForwardMaxSpeed);
+            StringBuilder str = new StringBuilder();
+            str.Append("Транспортные средства, удовлетворяющие условию:\n");
+
+            if (lst == null || lst.Count() < 1)
             {
-                int s = 0;
-                foreach (var item in x.Value)
+                str.Append("- нет");
+            }
+            else
+            {
+                foreach (var item in lst)
                 {
-                    s += (item as VehicleBase).CurrentPrice;
+                    var vehicle = item as VehicleBase;
+                    str.Append(String.Format("- {0,13};    Скорость: {1,3} км/ч;\n",
+                        vehicle.Brand.Name, vehicle.ForwardMaxSpeed));
                 }
-                return s;
-            });
 
-            // Вариант 2
-            //foreach (var item in Garage.Vehicles)
-            //{
-            //    foreach (var item1 in item.Value)
-            //    {
-            //        sum += (item1 as VehicleBase).CurrentPrice;
-            //    }
-            //}
-            return sum;
+            }
+            return str.ToString();
         }
 
 
 
         /// <summary>
-        /// Buy Car
+        /// Buy Car (temporary solution)
         /// </summary>
-        /// <returns></returns>
-        internal Car BuyCar()
+        /// <returns>null or new Car()</returns>
+        internal Car BuyCar(AutoShopModel autoShop)
         {
-            AutoShopModel autoShop = new AutoShopModel();
             return autoShop.SaleCar();
         }
 
@@ -131,13 +137,12 @@ namespace TaxiStation.Models
         /// <returns></returns>
         public string ViewGarageAutopark()
         {
-            StringBuilder strVehicles = new StringBuilder();
-
-            foreach (var item in Garage.Vehicles)
+            var vehicleGroups = _garage.Vehicles.GroupBy(v => ((VehicleBase)v).VehicleType); 
+            StringBuilder strVehicles = new StringBuilder(); 
+            foreach (var item in vehicleGroups)
             {
-                var dict = (KeyValuePair<string, ICollection>)item;
-                strVehicles.Append(GetVehicleType(dict.Key) + ":\n");
-                strVehicles.Append(GetVehiclesInfo(dict.Value));
+                strVehicles.Append(GetVehicleType(item.Key) + ":\n");
+                strVehicles.Append(GetVehiclesInfo(item));
             }
             return strVehicles.ToString();
         }
@@ -148,17 +153,21 @@ namespace TaxiStation.Models
         /// </summary>
         /// <param name="value">ICollection vehicle list</param>
         /// <returns>Formated string (general each vehicle information)</returns>
-        private string GetVehiclesInfo(ICollection value)
+        private string GetVehiclesInfo(object value)
         {
             StringBuilder strVehicleInfo = new StringBuilder();
-            foreach (var item in value)
+            var vehicles = value as IEnumerable;
+            if (vehicles != null)
             {
-                if (item is VehicleBase)
+                foreach (var item in vehicles)
                 {
-                    var vehicle = item as VehicleBase;
-                    strVehicleInfo.Append(String.Format("- Модель: {0,13};    Цена: {1,7:#,#} BYN;    Скорость: {2,3} км/ч;    Расход:{3,3} л/100 км;\n", 
-                        vehicle.Brand.Name, vehicle.CurrentPrice, vehicle.ForwardMaxSpeed, vehicle.Engine.Model.FuelConsumptionTown));
-                }                
+                    if (item is VehicleBase)
+                    {
+                        var vehicle = item as VehicleBase;
+                        strVehicleInfo.Append(String.Format("- Модель: {0,13};    Цена: {1,7:#,#} BYN;    Скорость: {2,3} км/ч;    Расход:{3,3} л/100 км;\n",
+                            vehicle.Brand.Name, vehicle.CurrentPrice, vehicle.ForwardMaxSpeed, vehicle.Engine.Model.FuelConsumptionTown));
+                    }
+                }
             }
             return strVehicleInfo.ToString();
         }

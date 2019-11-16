@@ -11,9 +11,9 @@ namespace TaxiStation.Models
 
         #region FIELDS
         //##################################################################################################################
-        
-        private Dictionary<string, ICollection> _vehicles = new Dictionary<string, ICollection>();      // any type vehicles list
-               
+
+        private List<object> _vehicles;
+
         #endregion // FIELDS
 
 
@@ -22,7 +22,11 @@ namespace TaxiStation.Models
         #region PROPERTIES
         //##################################################################################################################
 
-        internal Dictionary<string, ICollection> Vehicles { get => _vehicles; }
+        //internal Dictionary<string, ICollection> Vehicles { get => _vehicles; }
+
+        internal List<object> Vehicles { get => _vehicles; }
+
+
 
         #endregion // PROPERTIES
 
@@ -30,6 +34,14 @@ namespace TaxiStation.Models
         #region CTOR
         //##################################################################################################################
 
+        public GarageModel()
+        {
+            this._vehicles = new List<object>();
+        }
+        public GarageModel(List<object> vehicles)
+        {
+            this._vehicles = vehicles;
+        }
 
         #endregion // CTOR
 
@@ -39,27 +51,46 @@ namespace TaxiStation.Models
         //##################################################################################################################
 
         /// <summary>
-        /// Add new vehicles to Garage 
+        /// Add new Car to Garage 
         /// </summary>
-        /// <param name="car"></param>
-        internal void AddVehicle<T>(T car) where T : VehicleBase
+        /// <param name="newCar">Type: Car</param>
+        internal void AddVehicle(Car newCar)
         {
-            Type V = car.GetType();
-            if (_vehicles.ContainsKey(V.Name))
+            if (newCar != null)
             {
-                dynamic list = _vehicles[V.Name];
-                list.Add(car);
-                ICollection collection = list;
-                _vehicles[V.Name] = list;
-            }
-            else
-            {
-                List<T> lst = new List<T>();
-                lst.Add(car);
-                ICollection collection = lst;
-                this.Vehicles.Add(V.Name, lst);
-            }
+                this._vehicles.Add(newCar);
+            }  
         }
+
+
+
+
+
+
+        ///// <summary>
+        ///// Add new vehicles to Garage 
+        ///// </summary>
+        ///// <param name="car"></param>
+        //internal void AddVehicle<T>(T car) where T : VehicleBase
+        //{
+
+
+        //Type V = car.GetType();
+        //if (_vehicles.ContainsKey(V.Name))
+        //{
+        //    dynamic list = _vehicles[V.Name];
+        //    list.Add(car);
+        //    ICollection collection = list;
+        //    _vehicles[V.Name] = list;
+        //}
+        //else
+        //{
+        //    List<T> lst = new List<T>();
+        //    lst.Add(car);
+        //    ICollection collection = lst;
+        //    this.Vehicles.Add(V.Name, lst);
+        //}
+        //}
 
 
         #endregion // METHODS

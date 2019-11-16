@@ -4,26 +4,23 @@ using System;
 
 namespace Machinery.Vehicles
 {
+
+    /// <summary>
+    /// Base class for all selfpropelled vehicles
+    /// </summary>
     public abstract class VehicleBase : ISelfPropelled, IPriceable
     {
 
-        #region FIELDS
-        //##################################################################################################################
-
-
-
-
-        #endregion // FIELDS
-
-
-
         #region PROPERTIES
         //##################################################################################################################
+
+        public string VehicleType { get; protected set; }
 
         /// <summary>
         /// Vehicle brand
         /// </summary>
         public Brand Brand { get; internal set; }
+
 
         /// <summary>
         /// Vehicle Model
@@ -52,15 +49,8 @@ namespace Machinery.Vehicles
 
         public VehicleBase()
         {
-
-            this.ForwardMaxSpeed = SetMaxSpeedRND();          // 
+            this.ForwardMaxSpeed = SetMaxSpeedRND(Production.rnd); 
         }
-
-
-
-
-
-
 
         #endregion // CTOR
 
@@ -69,10 +59,12 @@ namespace Machinery.Vehicles
         #region METHODS
         //##################################################################################################################
 
-
-        private int SetMaxSpeedRND()
+        /// <summary>
+        /// Set vehicle max speed 
+        /// /// </summary>
+        /// <returns>integer</returns>
+        private int SetMaxSpeedRND(Random rnd)
         {
-            Random rnd = new Random();
             return rnd.Next(100, 280);     // Получить случайное число (в диапазоне от 100 до 280)
         }
 

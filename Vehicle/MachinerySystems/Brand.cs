@@ -47,7 +47,7 @@ namespace Machinery.MachinerySystems
         //##################################################################################################################
 
 
-        public Brand() : this(GetNameRND()){}
+        public Brand() : this(GetNameRND(Production.rnd)){}
 
         public Brand(string name)
         {
@@ -65,9 +65,8 @@ namespace Machinery.MachinerySystems
         /// 
         /// </summary>
         /// <returns></returns>
-        private static string GetNameRND()
-        {
-            Random rnd = new Random();
+        private static string GetNameRND(Random rnd)
+        {            
             int n = Enum.GetNames(typeof(EnumCarsBrand)).Length;
             n = rnd.Next(1, n);
             return Enum.GetName(typeof(EnumCarsBrand), n);                   

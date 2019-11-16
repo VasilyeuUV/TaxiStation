@@ -59,6 +59,7 @@
     <Compile Include="MachinerySystems\Engines\IMoverFactory.cs" />
     <Compile Include="MachinerySystems\FuelSystems\FuelSystemBase.cs" />
     <Compile Include="MachinerySystems\Mover.cs" />
+    <Compile Include="Production.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vehicles\Car.cs" />

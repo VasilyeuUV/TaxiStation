@@ -43,11 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\GarageCarBuilder.cs" />
     <Compile Include="ConsoleMenu\Menu.cs" />
-    <Compile Include="Builders\IGarageBuilder.cs" />
-    <Compile Include="Builders\GarageDirector.cs" />
     <Compile Include="Models\GarageModel.cs" />
+    <Compile Include="Models\TaxiStationInitializer.cs" />
     <Compile Include="Models\TaxiStationModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,9 +54,7 @@
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Shop\Shop.csproj">
       <Project>{7FFEC07A-623F-4196-B9F7-91221603EDA9}</Project>

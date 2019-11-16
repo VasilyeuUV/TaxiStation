@@ -50,9 +50,8 @@ namespace Machinery.MachinerySystems.Engines
         #region METHODS
         //##################################################################################################################
 
-        protected int SetFuelConsumtionRND()
+        protected int SetFuelConsumtionRND(Random rnd)
         {
-            Random rnd = new Random();
             return rnd.Next(3, 15);     //Получить случайное число (в диапазоне от 3 до 15)
         }
 

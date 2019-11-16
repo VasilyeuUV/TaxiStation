@@ -9,13 +9,6 @@ namespace Machinery.Vehicles
     public class Car : VehicleBase
     {
 
-        #region FIELDS
-        //##################################################################################################################
-
-        #endregion // FIELDS
-
-
-
         #region PROPERTIES
         //##################################################################################################################
 
@@ -23,7 +16,6 @@ namespace Machinery.Vehicles
         /// Car VIN
         /// </summary>
         public Guid VIN { get; private set; }
-
 
         #endregion // PROPERTIES
 
@@ -33,24 +25,11 @@ namespace Machinery.Vehicles
 
         public Car()
         {
+            this.VehicleType = this.GetType().Name;
             this.VIN = Guid.NewGuid();
         }
 
-
-
         #endregion // CTOR
-
-
-
-        #region METHODS
-        //##################################################################################################################
-
-
-
-
-        #endregion // METHODS
-
-
 
     }
 }
