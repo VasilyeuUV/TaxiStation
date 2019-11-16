@@ -16,7 +16,7 @@ namespace TaxiStation
             TaxiStationModel taxiStation = TaxiStationInitializer.CreateTaxiStation(fileName);
 
             // MENU
-            string[] items = { "Стоимость автопарка", "Сортировать автомобили по расходу топлива", "Поиск автомобиляей по скорости", "Новый список автомобилей", "Выход" };
+            string[] items = { "Стоимость автопарка", "Сортировать автомобили по расходу топлива", "Поиск автомобилей по скорости", "Новый список автомобилей", "Выход" };
             method[] methods = new method[] { GetPriceAllCars, SortCarByFuelСonsumption, FindCarBySpeed, BuyCar, Exit };
             Menu menu = new Menu(items);
             int menuResult;
